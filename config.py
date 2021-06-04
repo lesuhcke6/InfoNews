@@ -24,3 +24,9 @@ class DevelopementConfig(Config):
 class ProductionConfig(Config):
     DEBUG = False
     # REDIS_HOST = "222.xx.xx.xx"
+
+# 记录配置类型和配置子类的对应关系
+config_dict = {
+    "dev": DevelopementConfig,
+    "pro": ProductionConfig
+}
