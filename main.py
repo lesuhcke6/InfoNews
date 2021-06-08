@@ -1,6 +1,6 @@
-from flask import Flask,session
+from flask import session
 from flask_script import Manager
-from flask_migrate import Migrate,MigrateCommand
+from flask_migrate import MigrateCommand
 
 from info import creat_app
 
@@ -11,11 +11,7 @@ mgr = Manager(app)
 # 使用管理器生成迁移命令
 mgr.add_command("mc",MigrateCommand)
 
-@app.route("/")
-def index():
-    # 和之前一样使用session进行存取操作
-    session["name"] = "zs"
-    return "index"
+
 
 
 if __name__ == '__main__':
